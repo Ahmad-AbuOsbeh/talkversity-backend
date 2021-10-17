@@ -19,7 +19,7 @@ const users = new mongoose.Schema({
   },
 });
 
-// get the token for bearer auth, for every new user
+// get the token for bearer auth, for every user document
 users.virtual('token').get(function () {
   let tokenObject = {
     username: this.username,
