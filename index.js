@@ -2,6 +2,7 @@
 
 require('dotenv').config();
 
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/talkversitydb';
 //import the server
 const server = require('./src/server.js');
 
@@ -15,7 +16,7 @@ const options = {
 
 // connect database then Start the server
 mongoose
-  .connect(process.env.MONGODB_URI, options)
+  .connect(MONGODB_URI, options)
   .then(() => {
     server.start(process.env.PORT);
   })
