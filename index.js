@@ -2,7 +2,7 @@
 
 require('dotenv').config();
 
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/talkversitydb';
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://ahmad:4OgBwpsLM80vVWDu@cluster0.pc38n.mongodb.net/talkversitydb?retryWrites=true&w=majority';
 //import the server
 const server = require('./src/server.js');
 
