@@ -5,7 +5,7 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
 //secret for jwt
-const SECRET = process.env.SECRET || 'ahmad12345$';
+const SECRET = 'ahmad12345$';
 
 // create users schema
 const users = new mongoose.Schema({
