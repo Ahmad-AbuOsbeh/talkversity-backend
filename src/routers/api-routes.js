@@ -21,11 +21,10 @@ const bearerAuth = require('../middlewares/bearerAuth');
 const router = express.Router();
 
 // user route, get all courses
-router.get('/user', bearerAuth, permissions('read'), getAllCoursesHandler);
-router.get('/admin', bearerAuth, permissions('read'), getAllCoursesHandler);
-router.post('/admin', bearerAuth, permissions('create'), handleCreate);
-router.put('/admin/:id', bearerAuth, permissions('update'), handleUpdate);
-router.delete('/admin/:id', bearerAuth, permissions('delete'), handleDelete);
+router.get('/courses', bearerAuth, permissions('read'), getAllCoursesHandler);
+router.post('/course', bearerAuth, permissions('create'), handleCreate);
+router.put('/course/:id', bearerAuth, permissions('update'), handleUpdate);
+router.delete('/course/:id', bearerAuth, permissions('delete'), handleDelete);
 
 // get all courses handler
 async function getAllCoursesHandler(req, res) {

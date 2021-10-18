@@ -5,11 +5,6 @@ const base64 = require('base-64');
 
 const User = require('../models/usersModel');
 
-// error handler for invalid token
-function errorByAuthentication() {
-  next('Invalid Token');
-}
-
 // export basic auth middleware
 module.exports = async (req, res, next) => {
   if (!req.headers.authorization) {
@@ -27,5 +22,10 @@ module.exports = async (req, res, next) => {
     next();
   } catch (e) {
     errorByAuthentication();
+  }
+
+  // error handler for invalid token
+  function errorByAuthentication() {
+    next('Invalid Token');
   }
 };
